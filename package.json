@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Trang web chấm điểm KPI (Tổ + Hội đồng + Hiệu trưởng) — Trường Mẫu giáo Hoa Cúc",
+  "description": "Trang web chấm điểm KPI (Tổ + Hội đồng + Hiệu trưởng) — Trường Mẫu giáo Hoa Cúc, xã Ea Drông",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

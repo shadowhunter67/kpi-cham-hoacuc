@@ -28,7 +28,7 @@ function screen(...children: (Node | string | false | null | undefined)[]): HTML
     h("header", { class: "app-bar" },
       h("div", {},
         h("h1", {}, "Chấm điểm KPI"),
-        h("p", { class: "app-sub" }, "Trường Mẫu giáo Hoa Cúc"),
+        h("p", { class: "app-sub" }, "Trường Mẫu giáo Hoa Cúc, xã Ea Drông"),
       ),
     ),
     ...children,

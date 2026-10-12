@@ -1,7 +1,7 @@
 # kpi-cham-hoacuc — Trang web chấm điểm KPI
 
 Trang web tĩnh (Vite + TypeScript, không framework) để **Tổ** và **Hội đồng**
-chấm điểm KPI hằng tháng — Trường Mẫu giáo Hoa Cúc.
+chấm điểm KPI hằng tháng — Trường Mẫu giáo Hoa Cúc, xã Ea Drông.
 
 - Dữ liệu ở **Google Sheets**, không có database riêng.
 - Backend là **Google Apps Script Web App** (JSON API) trong repo
