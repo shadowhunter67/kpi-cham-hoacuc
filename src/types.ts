@@ -1,0 +1,76 @@
+export type ToChucVu = "trưởng" | "phó";
+
+export interface VaiTro {
+  to: string | null;
+  toChucVu: ToChucVu | null;
+  /** true nếu email có trong mục G (CẤU HÌNH HỆ THỐNG) — mọi thành viên
+   * Hội đồng đều có quyền chốt điểm như nhau, không còn phân biệt vai trò. */
+  hoiDong: boolean | null;
+}
+
+export interface Nguoi {
+  hoTen: string;
+  chucDanh: string;
+  to: string;
+  /** Kỳ của người này — thường trùng KhoiTaoResp.ky, TRỪ người tồn đọng
+   * kỳ cũ gộp thêm vào (Tổ được bật "CHO PHÉP CHẤM LẠI" ở mục F). */
+  ky: string;
+  daCham: number;
+  tongTieuChi: number;
+  daChot: boolean;
+  /** Chỉ có khi đang xem với vai trò Hội đồng — tiến độ/trạng thái CHẤM CỦA TỔ đối với người này. */
+  toDaCham?: number;
+  toDaChot?: boolean;
+}
+
+export interface KyHoiDong {
+  ky: string;
+  /** true nếu mọi người có dữ liệu tự chấm trong kỳ này đã được Hội đồng chốt điểm. */
+  xong: boolean;
+}
+
+export interface KhoiTaoResp {
+  email: string;
+  ky: string;
+  vaiTro: VaiTro;
+  /** Chỉ có khi đang xem với vai trò Hội đồng — danh sách kỳ có dữ liệu
+   * trong khoảng cấu hình (mục H), sắp xếp cũ nhất trước, để chọn kỳ khác kỳ mặc định. */
+  dsKyHoiDong?: KyHoiDong[];
+  nguoiDuocCham: Nguoi[];
+}
+
+export interface DongPhieu {
+  ma: string;
+  noiDung: string;
+  diemToiDa: number;
+  diemTuCham: number | null;
+  diemTo: number | null;
+  diemHoiDong: number | null;
+}
+
+export type TrangThai = "" | "đã chốt";
+
+export interface PhieuResp {
+  hoTen: string;
+  chucDanh: string;
+  to: string;
+  ky: string;
+  vaiTro: VaiTro;
+  quyen: { laNguoiChamTo: boolean; laHieuTruong: boolean; hoiDongChoTo: boolean };
+  canEdit: { to: boolean; hoiDong: boolean };
+  trangThai: { to: TrangThai; hoiDong: TrangThai };
+  chotLuc: { to: string; hoiDong: string };
+  rows: DongPhieu[];
+  nhanXet: { to: string; hoiDong: string };
+  tuCham: {
+    thoiGianNop: string;
+    nhiemVuKiemNhiem: string;
+    tongTC: number;
+    tongKPI: number;
+  };
+}
+
+export interface DiemItem {
+  ma: string;
+  diem: number;
+}
