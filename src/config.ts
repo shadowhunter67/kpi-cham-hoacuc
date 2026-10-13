@@ -6,6 +6,9 @@ if (!url || !clientId) {
   console.warn("Thiếu VITE_APPS_SCRIPT_URL hoặc VITE_GOOGLE_CLIENT_ID");
 }
 
+/** Tên trường hiển thị trên giao diện (đổi qua biến build VITE_TEN_TRUONG, mặc định Mẫu giáo Hoa Cúc). */
+export const TEN_TRUONG = (import.meta.env.VITE_TEN_TRUONG as string | undefined) || "Trường Mẫu giáo Hoa Cúc";
+
 export const CONFIG = {
   appsScriptUrl: url ?? "",
   googleClientId: clientId ?? "",
